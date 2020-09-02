@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import DeliveryIcon from '../../assets/delivery_icon.svg';
 
-const Shipments = ({ children }) => {
+const Shipments = ({ orders }) => {
   return (
     <div>
       <img
@@ -10,16 +12,23 @@ const Shipments = ({ children }) => {
         src={DeliveryIcon}
         alt="delivery"
       />
-      <span className="text-6xl font-bold text-gray-500 uppercase">121</span>
+      <span className="text-6xl font-bold text-gray-500 uppercase">
+        {orders.delivered + orders.undelivered}
+      </span>
       <span className="block my-2 text-base font-bold text-gray-900">
         Shipments
       </span>
       <span className="block my-2 text-sm text-gray-500">
         Total Number of Shipments
       </span>
-      {children}
     </div>
   );
 };
 
-export default Shipments;
+const mapStateToProps = (state) => {
+  return {
+    orders: state.orders,
+  };
+};
+
+export default connect(mapStateToProps)(Shipments);

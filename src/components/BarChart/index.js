@@ -9,9 +9,9 @@ const BarChart = () => {
         label: 'Shipments',
         backgroundColor: [
           'rgba(245, 101, 101, 0.5)',
-          'rgba(245, 101, 101, 0.5)',
+          'rgba(72, 187, 120, 0.5)',
         ],
-        borderColor: ['rgba(245, 101, 101, 0.7)', 'rgba(245, 101, 101, 0.7)'],
+        borderColor: ['rgba(245, 101, 101, 0.7)', 'rgba(72, 187, 120, 0.7)'],
         borderWidth: 2,
         data: [25, 5],
       },
